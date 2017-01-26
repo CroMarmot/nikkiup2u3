@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="nikkiup2u3">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type='text/javascript' src='static/bower_components/angular/angular.min.js'></script>
+    <script type='text/javascript' src='static/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+    <link rel="stylesheet" href='static/bower_components/bootstrap/dist/css/bootstrap.min.css'>
+
+    <script type='text/javascript' src='assets/core.js'></script>
+    <script type='text/javascript' src='assets/dressup/dressup.module.js'></script>
+    <script type='text/javascript' src='assets/dressup/dressup.controller.js'></script>
+    <script type='text/javascript' src='assets/dressup/dressup.directive.js'></script>
+    <script type='text/javascript' src='assets/main.js'></script>
+  </head>
+  <body>
+    {{1+1}}
+    <div controller="DressupController">
+      {{a}}
+      <dress-up></dress-up>
+    </div>
+  </body>
+</html>

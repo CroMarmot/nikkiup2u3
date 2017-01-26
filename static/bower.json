@@ -1,0 +1,22 @@
+{
+  "name": "nikkiup2u3",
+  "authors": [
+    "yexiaorain <yexiaorain@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-bootstrap": "^2.4.0",
+    "bootstrap": "^3.3.7"
+  }
+}
