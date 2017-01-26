@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   MainController.$inject = ['$scope', '$rootScope'];
-  function DressupController($scope, $rootScope) {
+  function MainController($scope, $rootScope) {
     ;
   }
 })();
