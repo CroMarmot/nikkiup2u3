@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module("nikki.main").directive("nikkiMain", nikkiMain);
-  function dressUp() {
+  function nikkiMain() {
     return {
       restrict: "E",
       scope: {},
