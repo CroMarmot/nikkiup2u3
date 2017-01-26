@@ -7,16 +7,18 @@
     <link rel="stylesheet" href='static/bower_components/bootstrap/dist/css/bootstrap.min.css'>
 
     <script type='text/javascript' src='assets/core.js'></script>
+    
     <script type='text/javascript' src='assets/dressup/dressup.module.js'></script>
     <script type='text/javascript' src='assets/dressup/dressup.controller.js'></script>
     <script type='text/javascript' src='assets/dressup/dressup.directive.js'></script>
-    <script type='text/javascript' src='assets/main.js'></script>
+
+    <script type='text/javascript' src='assets/main/main.module.js'></script>
+    <script type='text/javascript' src='assets/main/main.controller.js'></script>
+    <script type='text/javascript' src='assets/main/main.directive.js'></script>
+
+    <script type='text/javascript' src='assets/index.js'></script>
   </head>
   <body>
-    {{1+1}}
-    <div controller="DressupController">
-      {{a}}
-      <dress-up></dress-up>
-    </div>
+    <nikki-main></nikki-main>
   </body>
 </html>
