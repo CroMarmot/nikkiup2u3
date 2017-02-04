@@ -1,4 +1,4 @@
-// Clothes: name, type, id, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm，extra, source, suit
+// Clothes: name, type, id , hearts, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm，extra, source, suit
 // credits to jillhx@tieba
 var wardrobe = [
   ['默认粉毛','发型','001','2','','S','','A','','A','','A','','A','','赠送',''],

@@ -7,7 +7,5 @@
 
   DressupController.$inject = ['$scope', '$rootScope'];
   function DressupController($scope, $rootScope) {
-    console.log(1234);
-    $scope.a=1000;
   }
 })();

@@ -725,3 +725,5 @@ allThemes = function() {
   }
   return ret;
 }();
+
+console.log(allThemes);
