@@ -1,5 +1,5 @@
 <select name="levelSelect" id="levelSelect" ng-model="data.model">
-  <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+  <option ng-repeat="option in data.availableLevels" value="{{option[0]}}">{{option[1]}}</option>
 </select>
 
 {{data.model}}
