@@ -1,139 +1,132 @@
-    <div id='filtersTop'>
-      <form name="filter_form">
-        <div class='control'>
-          <input type="radio" name="mode" value="filtering" onClick="changeMode(true)" /> 筛选
-          <input type="radio" name="mode" value="ranking" onClick="changeMode(false)" checked/> 计分
-          <select id="theme" onChange="changeTheme()" style="display: none"></select>
-          <input class="nice" type="radio" name="boost" id="boostStandard" value="standard" onClick="changeBoost(1)" checked/>
-          <label for="boostStandard">标准</label>
-          <input class="nice" type="radio" name="boost" id="boostExtreme" value="boostExtreme" onClick="changeBoost(2)" />
-          <label for="boostExtreme">极限-顶配</label>
-          <input class="nice" type="radio" name="boost" id="boostExtremeMine" value="boostExtremeMine" onClick="changeBoost(3)" />
-          <label for="boostExtremeMine">极限-我的衣柜</label>
-        </div>
-        <div class='facet'>
-          <div class='control'>
-            <input type="radio" name="simple" value="0" onClick="changeFilter()" /> 皆可
-            <input type="radio" name="simple" value="1" onClick="changeFilter()" /> 简约
-            <input type="radio" name="simple" value="-1" onClick="changeFilter()" /> 华丽
-            <div class='weightContainer' style="display: none" id = "simpleWeightContainer">
-            	&nbsp;&nbsp;权重 <input type="text" id="simpleWeight" name="simpleWeight" value="1" onChange="changeFilter()" />
-              <span class="boost" id="simpleBoost"></span>
-          	</div>
-          </div>
-          <div class='control'>
-            <input type="radio" name="cute" value="0" onClick="changeFilter()" /> 皆可
-            <input type="radio" name="cute" value="1" onClick="changeFilter()" /> 可爱
-            <input type="radio" name="cute" value="-1" onClick="changeFilter()" /> 成熟
-            <div class='weightContainer' style="display: none" id = "cuteWeightContainer">
-            	&nbsp;&nbsp;权重 <input type="text" id="cuteWeight" name="cuteWeight" value="1" onChange="changeFilter()" />
-              <span class="boost" id="cuteBoost"></span>
-            </div>
-          </div>
-          <div class='control'>
-            <input type="radio" name="active" value="0" onClick="changeFilter()" /> 皆可
-            <input type="radio" name="active" value="1" onClick="changeFilter()" /> 活泼
-            <input type="radio" name="active" value="-1" onClick="changeFilter()" /> 优雅
-            <div class='weightContainer' style="display: none" id = "activeWeightContainer">
-              &nbsp;&nbsp;权重 <input type="text" id="activeWeight" name="activeWeight" value="1" onChange="changeFilter()" />
-              <span class="boost" id="activeBoost"></span>
-            </div>
-          </div>
-          <div class='control'>
-            <input type="radio" name="pure" value="0" onClick="changeFilter()" /> 皆可
-            <input type="radio" name="pure" value="1" onClick="changeFilter()" /> 清纯
-            <input type="radio" name="pure" value="-1" onClick="changeFilter()" /> 性感
-            <div class='weightContainer' style="display: none" id = "pureWeightContainer">
-              &nbsp;&nbsp;权重 <input type="text" id="pureWeight" name="pureWeight" value="1" onChange="changeFilter()" />
-              <span class="boost" id="pureBoost"></span>
-            </div>
-          </div>
-          <div class='control'>
-            <input type="radio" name="cool" value="0" onClick="changeFilter()" /> 皆可
-            <input type="radio" name="cool" value="1" onClick="changeFilter()" /> 清凉
-            <input type="radio" name="cool" value="-1" onClick="changeFilter()" /> 保暖
-            <div class='weightContainer' style="display: none" id = "coolWeightContainer">
-              &nbsp;&nbsp;权重 <input type="text" id="coolWeight" name="coolWeight" value="1" onChange="changeFilter()" />
-              <span class="boost" id="coolBoost"></span>
-            </div>
-          </div>
-          <div id='tagFilter'>
-            <div class='control'>
-              Tag1
-              <input type="text" id="tag1" name="tag1" onChange="changeFilter()" />
-              <div class='tagContainer weightContainer' style="display: none" id = "tag1Container">
-                <input type="radio" name="tag1method" value="add" onClick="changeFilter()" checked/> 加分
-                <select id="tag1base" onChange="changeFilter()">
-                  <option>SS</option>
-                  <option>S</option>
-                  <option>A</option>
-                  <option>B</option>
-                  <option>C</option>
-                </select>
-                &times;
-                <input type="text" id="tag1weight" name="tag1weight" value="1" onChange="changeFilter()" />
-              </div>
-            </div>
-            <div class='control'>
-              Tag2
-              <input type="text" id="tag2" name="tag2" onChange="changeFilter()" />
-              <div class='tagContainer weightContainer' style="display: none" id = "tag2Container">
-                <input type="radio" name="tag2method" value="add" onClick="changeFilter()" checked/> 加分
-                <select id="tag2base" onChange="changeFilter()">
-                  <option>SS</option>
-                  <option>S</option>
-                  <option>A</option>
-                  <option>B</option>
-                  <option>C</option>
-                </select>
-                &times;
-                <input type="text" id="tag2weight" name="tag2weight" value="1" onChange="changeFilter()" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <input type="checkbox" name="inventory" value="own" onClick="onChangeUiFilter()" checked />拥有
-          <span id='inventoryCount'> </span>
-          <input type="checkbox" name="inventory" value="missing" onClick="onChangeUiFilter()" checked /> 没有
-        </div>
-      </form>
-    </div>
-    <div id="skills">
-    </div>
-    <hr>
-    <div id="summary" class="panel">
-      <h3>for 玉人</h3>
-      <div id="ranking">
-      </div>
-    </div>
-    <div id='shoppingCartContainer'>
-      已选择的衣服
-      <span id="accessoriesPanel"><input type="checkbox" id="accessoriesHelper" checked />自动选择饰品</span>
-      <span id="accessoriesWarning" class="red" style="display:none">极限模式下所有衣服均为自动推荐</span>
-      <button onclick="clearShoppingCart()">清空购物车</button>
-      <input type="text" id="searchitem" placeholder="输入衣服名称或编号" class='suggest'/>
-      <div id='shoppingCart'>
-      </div>
-    </div>
-    <hr>
-    <div id='category_container'> 
-    </div>
-    <div id = "clothes"></div>
-    <hr>
-    导入批量衣服，请先选择要导入的类别，然后在文本框内输入编号，用空格、逗号或者换行隔开。不知道编号在哪儿的请点<a href="http://tieba.baidu.com/p/3808711082" target="_blank">这里</a>
-    <div id = "import">
-      <select id="importCate" onChange="clearImport()"></select> <br/>
-      <textarea id="importData" rows=5 style="width:600px"></textarea>
-      <button onClick="doImport()">导入</button>
-    </div>
+<select name="levelSelect" id="levelSelect" ng-model="data.model">
+  <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+</select>
 
-    <hr>
-    <p>我拥有的服装 （复制衣橱文本框内容以备份衣橱）</p>
-    <textarea id="myClothes" rows=10 style="width:600px"></textarea>
-    <br/>
-    <button onClick="loadCustomInventory()">Update inventory</button>
-    <br/>
-    <hr>
-    <div id = 'log'></div>
+{{data.model}}
+
+
+
+
+
+
+
+
+<div id='filtersTop'>
+  <form name="filter_form">
+    <div class='control'>
+      <input type="radio" name="mode" value="filtering" onClick="changeMode(true)" /> 筛选
+      <input type="radio" name="mode" value="ranking" onClick="changeMode(false)" checked/> 计分
+      <select id="theme" onChange="changeTheme()" style="display: none"></select>
+      <input class="nice" type="radio" name="boost" id="boostStandard" value="standard" onClick="changeBoost(1)" checked/>
+      <label for="boostStandard">标准</label>
+      <input class="nice" type="radio" name="boost" id="boostExtreme" value="boostExtreme" onClick="changeBoost(2)" />
+      <label for="boostExtreme">极限-顶配</label>
+      <input class="nice" type="radio" name="boost" id="boostExtremeMine" value="boostExtremeMine" onClick="changeBoost(3)" />
+      <label for="boostExtremeMine">极限-我的衣柜</label>
+    </div>
+    <div class='facet'>
+      <div class='control'>
+        <input type="radio" name="simple" value="0" onClick="changeFilter()" /> 皆可
+        <input type="radio" name="simple" value="1" onClick="changeFilter()" /> 简约
+        <input type="radio" name="simple" value="-1" onClick="changeFilter()" /> 华丽
+        <div class='weightContainer' style="display: none" id = "simpleWeightContainer">
+          &nbsp;&nbsp;权重 <input type="text" id="simpleWeight" name="simpleWeight" value="1" onChange="changeFilter()" />
+          <span class="boost" id="simpleBoost"></span>
+        </div>
+      </div>
+      <div class='control'>
+        <input type="radio" name="cute" value="0" onClick="changeFilter()" /> 皆可
+        <input type="radio" name="cute" value="1" onClick="changeFilter()" /> 可爱
+        <input type="radio" name="cute" value="-1" onClick="changeFilter()" /> 成熟
+        <div class='weightContainer' style="display: none" id = "cuteWeightContainer">
+          &nbsp;&nbsp;权重 <input type="text" id="cuteWeight" name="cuteWeight" value="1" onChange="changeFilter()" />
+          <span class="boost" id="cuteBoost"></span>
+        </div>
+      </div>
+      <div class='control'>
+        <input type="radio" name="active" value="0" onClick="changeFilter()" /> 皆可
+        <input type="radio" name="active" value="1" onClick="changeFilter()" /> 活泼
+        <input type="radio" name="active" value="-1" onClick="changeFilter()" /> 优雅
+        <div class='weightContainer' style="display: none" id = "activeWeightContainer">
+          &nbsp;&nbsp;权重 <input type="text" id="activeWeight" name="activeWeight" value="1" onChange="changeFilter()" />
+          <span class="boost" id="activeBoost"></span>
+        </div>
+      </div>
+      <div class='control'>
+        <input type="radio" name="pure" value="0" onClick="changeFilter()" /> 皆可
+        <input type="radio" name="pure" value="1" onClick="changeFilter()" /> 清纯
+        <input type="radio" name="pure" value="-1" onClick="changeFilter()" /> 性感
+        <div class='weightContainer' style="display: none" id = "pureWeightContainer">
+          &nbsp;&nbsp;权重 <input type="text" id="pureWeight" name="pureWeight" value="1" onChange="changeFilter()" />
+          <span class="boost" id="pureBoost"></span>
+        </div>
+      </div>
+      <div class='control'>
+        <input type="radio" name="cool" value="0" onClick="changeFilter()" /> 皆可
+        <input type="radio" name="cool" value="1" onClick="changeFilter()" /> 清凉
+        <input type="radio" name="cool" value="-1" onClick="changeFilter()" /> 保暖
+        <div class='weightContainer' style="display: none" id = "coolWeightContainer">
+          &nbsp;&nbsp;权重 <input type="text" id="coolWeight" name="coolWeight" value="1" onChange="changeFilter()" />
+          <span class="boost" id="coolBoost"></span>
+        </div>
+      </div>
+      <div id='tagFilter'>
+        <div class='control'>
+          Tag1
+          <input type="text" id="tag1" name="tag1" onChange="changeFilter()" />
+          <div class='tagContainer weightContainer' style="display: none" id = "tag1Container">
+            <input type="radio" name="tag1method" value="add" onClick="changeFilter()" checked/> 加分
+            <select id="tag1base" onChange="changeFilter()">
+              <option>SS</option>
+              <option>S</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+            </select>
+            &times;
+            <input type="text" id="tag1weight" name="tag1weight" value="1" onChange="changeFilter()" />
+          </div>
+        </div>
+        <div class='control'>
+          Tag2
+          <input type="text" id="tag2" name="tag2" onChange="changeFilter()" />
+          <div class='tagContainer weightContainer' style="display: none" id = "tag2Container">
+            <input type="radio" name="tag2method" value="add" onClick="changeFilter()" checked/> 加分
+            <select id="tag2base" onChange="changeFilter()">
+              <option>SS</option>
+              <option>S</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+            </select>
+            &times;
+            <input type="text" id="tag2weight" name="tag2weight" value="1" onChange="changeFilter()" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <input type="checkbox" name="inventory" value="own" onClick="onChangeUiFilter()" checked />拥有
+      <span id='inventoryCount'> </span>
+      <input type="checkbox" name="inventory" value="missing" onClick="onChangeUiFilter()" checked /> 没有
+    </div>
+  </form>
+</div>
+<div id="skills">
+</div>
+<hr>
+<div id="summary" class="panel">
+  <h3>for 玉人</h3>
+  <div id="ranking">
+  </div>
+</div>
+<div id='shoppingCartContainer'>
+  已选择的衣服
+  <span id="accessoriesPanel"><input type="checkbox" id="accessoriesHelper" checked />自动选择饰品</span>
+  <span id="accessoriesWarning" class="red" style="display:none">极限模式下所有衣服均为自动推荐</span>
+  <button onclick="clearShoppingCart()">清空购物车</button>
+  <input type="text" id="searchitem" placeholder="输入衣服名称或编号" class='suggest'/>
+  <div id='shoppingCart'>
+  </div>
+</div>
 

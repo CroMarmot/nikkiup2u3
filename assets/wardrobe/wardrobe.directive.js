@@ -7,7 +7,7 @@
       restrict: "E",
       scope: {},
       templateUrl: "assets/wardrobe/wardrobe.html",
-      controller: "DressupController"
+      controller: "WardrobeController"
     };
   }
 })();

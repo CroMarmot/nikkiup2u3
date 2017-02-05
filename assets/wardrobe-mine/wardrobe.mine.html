@@ -1,0 +1,23 @@
+<uib-tabset active="1">
+</uib-tabset>
+
+<hr>
+<div id='category_container'> 
+</div>
+<div id = "clothes"></div>
+<hr>
+导入批量衣服，请先选择要导入的类别，然后在文本框内输入编号，用空格、逗号或者换行隔开。不知道编号在哪儿的请点<a href="http://tieba.baidu.com/p/3808711082" target="_blank">这里</a>
+<div id = "import">
+  <select id="importCate" onChange="clearImport()"></select> <br/>
+  <textarea id="importData" rows=5 style="width:600px"></textarea>
+  <button onClick="doImport()">导入</button>
+</div>
+
+<hr>
+<p>我拥有的服装 （复制衣橱文本框内容以备份衣橱）</p>
+<textarea id="myClothes" rows=10 style="width:600px"></textarea>
+<br/>
+<button onClick="loadCustomInventory()">Update inventory</button>
+<br/>
+<hr>
+<div id = 'log'></div>

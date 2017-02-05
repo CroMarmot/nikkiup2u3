@@ -1,0 +1,49 @@
+<table st-table="rowCollection" class="table table-striped" >
+	<thead>
+	<tr>
+    <th>名称</th>
+    <th>类别</th>
+    <th st-sort="2" >编号</th>
+    <th st-sort="3" >心级</th>
+    <th st-sort="4" >简约</th>
+    <th st-sort="5" >华丽</th>
+    <th st-sort="6" >可爱</th>
+    <th st-sort="7" >成熟</th>
+    <th st-sort="8" >活泼</th>
+    <th st-sort="9" >优雅</th>
+    <th st-sort="10">清纯</th>
+    <th st-sort="11">性感</th>
+    <th st-sort="12">清凉</th>
+    <th st-sort="13">保暖</th>
+    <th>特殊属性</th>
+    <th>来源</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in rowCollection">
+		<td>{{row[0]}}</td>
+		<td>{{row[1]}}</td>
+		<td>{{row[2]}}</td>
+		<td>{{row[3]}}</td>
+		<td>{{row[4]}}</td>
+		<td>{{row[5]}}</td>
+		<td>{{row[6]}}</td>
+		<td>{{row[7]}}</td>
+		<td>{{row[8]}}</td>
+		<td>{{row[9]}}</td>
+		<td>{{row[10]}}</td>
+		<td>{{row[11]}}</td>
+		<td>{{row[12]}}</td>
+		<td>{{row[13]}}</td>
+		<td>{{row[14]}}</td>
+		<td>{{row[15]}}</td>
+	</tr>
+	</tbody>
+  <tfoot>
+    <tr>
+      <td colspan="16" class="text-center">
+        <div st-pagination="" st-items-by-page="30" st-displayed-pages="7"></div>
+      </td>
+    </tr>
+  </tfoot>
+</table>

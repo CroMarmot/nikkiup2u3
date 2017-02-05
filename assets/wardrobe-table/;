@@ -1,0 +1,42 @@
+<table st-table="rowCollection" class="table table-striped">
+	<thead>
+	<tr>
+    <th>名称</th>
+    <th>类别</th>
+    <th>编号</th>
+    <th>心级</th>
+    <th>简约</th>
+    <th>华丽</th>
+    <th>可爱</th>
+    <th>成熟</th>
+    <th>活泼</th>
+    <th>优雅</th>
+    <th>清纯</th>
+    <th>性感</th>
+    <th>清凉</th>
+    <th>保暖</th>
+    <th>特殊属性</th>
+    <th>来源</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in rowCollection | limitTo:100">
+		<td>{{row[0]}}</td>
+		<td>{{row[1]}}</td>
+		<td>{{row[2]}}</td>
+		<td>{{row[3]}}</td>
+		<td>{{row[4]}}</td>
+		<td>{{row[5]}}</td>
+		<td>{{row[6]}}</td>
+		<td>{{row[7]}}</td>
+		<td>{{row[8]}}</td>
+		<td>{{row[9]}}</td>
+		<td>{{row[10]}}</td>
+		<td>{{row[11]}}</td>
+		<td>{{row[12]}}</td>
+		<td>{{row[13]}}</td>
+		<td>{{row[14]}}</td>
+		<td>{{row[15]}}</td>
+	</tr>
+	</tbody>
+</table>

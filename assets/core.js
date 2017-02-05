@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('nikki.core', ['ui.bootstrap']);
+    .module('nikki.core', ['ui.bootstrap','smart-table']);
 })();

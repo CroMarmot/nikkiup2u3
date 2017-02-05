@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('nikki.wardrobe', ['nikki.core']);
+    .module('nikki.wardrobe', ['nikki.wardrobe-all','nikki.wardrobe-mine']);
 })();
 
