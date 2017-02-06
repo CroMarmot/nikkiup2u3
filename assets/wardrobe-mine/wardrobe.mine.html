@@ -1,23 +1,13 @@
-<uib-tabset active="1">
-</uib-tabset>
-
-<hr>
-<div id='category_container'> 
+<view-wardrobe wardrobe="wardrobe" category="category">
+</view-wardrobe>
+<div class="col-md-6">
+  <select name="levelSelect" id="levelSelect" ng-model="data.category" class="form-control">
+    <option ng-repeat="(k,v) in view.category" value="{{k}}">{{v}}</option>
+  </select>
+  <textarea ng-model="view.append" class="form-control" style="min-height:500px" placeholder='使用以下格式:001,4,07,1023'></textarea>
+  <button ng-click="appendClick()" class="form-control">新增</button>
 </div>
-<div id = "clothes"></div>
-<hr>
-导入批量衣服，请先选择要导入的类别，然后在文本框内输入编号，用空格、逗号或者换行隔开。不知道编号在哪儿的请点<a href="http://tieba.baidu.com/p/3808711082" target="_blank">这里</a>
-<div id = "import">
-  <select id="importCate" onChange="clearImport()"></select> <br/>
-  <textarea id="importData" rows=5 style="width:600px"></textarea>
-  <button onClick="doImport()">导入</button>
+<div class="col-md-6">
+  <textarea ng-model="view.syn" class="form-control" style="min-height:500px;" placeholder='使用以下格式:{"发型":["001","004"],"连衣裙":["007","008"]}'></textarea>
+  <button ng-click="synClick()" class="form-control">同步</button>
 </div>
-
-<hr>
-<p>我拥有的服装 （复制衣橱文本框内容以备份衣橱）</p>
-<textarea id="myClothes" rows=10 style="width:600px"></textarea>
-<br/>
-<button onClick="loadCustomInventory()">Update inventory</button>
-<br/>
-<hr>
-<div id = 'log'></div>

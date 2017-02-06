@@ -1,0 +1,14 @@
+<div>
+  <h3>{{totalScore | numberfilter }}</h3>
+  <div ng-repeat="(k,v) in AllList" ng-if="v">
+    <div class="col-sm-4">
+      {{k}}
+    </div>
+    <div class="col-sm-4">
+      {{v[0]}}
+    </div>
+    <div class="col-sm-4">
+      {{contributionScore[v[1]+v[2]] | numberfilter}}
+    </div>
+  </div>
+</div>

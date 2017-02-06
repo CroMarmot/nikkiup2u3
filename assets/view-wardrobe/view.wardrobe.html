@@ -1,0 +1,5 @@
+<uib-tabset active="active" type="pills">
+  <uib-tab ng-repeat="(key,value) in viewdata" heading="{{key}}" style="width: 127px;text-align: center;">
+    <view-wardrobe-table typedata="viewdata[key]"></view-wardrobe-table>  
+  </uib-tab>
+</uib-tabset>

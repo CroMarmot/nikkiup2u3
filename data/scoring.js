@@ -124,7 +124,7 @@ var scoring = {
   '发型': avg(hairScoring),
   '连衣裙': avg(dressScoring),
   '外套': avg(coatScoring),
-  '上装': avg(topScoring),
+  '上衣': avg(topScoring),
   '下装': avg(bottomScoring),
   '袜子': avg(sockScoring),
   '鞋子': avg(shoeScoring),

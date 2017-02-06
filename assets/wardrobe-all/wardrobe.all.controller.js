@@ -5,29 +5,25 @@
     .module('nikki.wardrobe-all')
     .controller('WardrobeAllController', WardrobeAllController);
 
-  WardrobeAllController.$inject = ['$scope', '$rootScope','$q','WardrobeAllService'];
-  function WardrobeAllController($scope, $rootScope,$q,WardrobeAllService) {
-    var wardrobe = {};
-    var category = {};
-    var onDatasReady=function(){
-      if(_.isEmpty(wardrobe) || _.isEmpty(category))
-        return ;
-      $rootScope.wardrobe = wardrobe;
-      $rootScope.category = category;
-      $scope.viewdata = {};
-      for(var i = 0 ; i < category.length;i++){
-        var clothType = category[i];
-        $scope.viewdata[clothType] = _.filter(wardrobe,function(o){return o[1] == clothType;});
-      }
-      console.log($scope.viewdata);
+  WardrobeAllController.$inject = ['$scope', '$rootScope','DataService'];
+  function WardrobeAllController($scope, $rootScope,DataService) {
+    //[TODO use lock?]
+    if(_.isEmpty($rootScope.wardrobe)){
+      DataService.GetWardrobe().then(function(wd){
+        $scope.wardrobe = $rootScope.wardrobe = wd;
+      });
+    }else{
+      $scope.wardrobe = $rootScope.wardrobe;
     }
-    WardrobeAllService.GetWardrobe().then(function(wd){
-      wardrobe = wd;
-      onDatasReady();
-    });
-    WardrobeAllService.GetCategory().then(function(cg){
-      category = cg;
-      onDatasReady();
-    });
+
+    if(_.isEmpty($rootScope.categoryMain)){
+      DataService.GetCategory().then(function(cg){      
+        $rootScope.categoryMain = cg.mainIndex;
+        $rootScope.categoryDetail = cg.detailIndex;
+        $scope.category = $rootScope.categoryDetail;
+      });
+    }else{
+      $scope.category = $rootScope.categoryDetail;
+    }
   }
 })();

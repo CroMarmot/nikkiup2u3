@@ -1,132 +1,46 @@
-<select name="levelSelect" id="levelSelect" ng-model="data.model">
-  <option ng-repeat="option in data.availableLevels" value="{{option[0]}}">{{option[1]}}</option>
-</select>
-
-{{data.model}}
-
-
-
-
-
-
-
-
-<div id='filtersTop'>
-  <form name="filter_form">
-    <div class='control'>
-      <input type="radio" name="mode" value="filtering" onClick="changeMode(true)" /> 筛选
-      <input type="radio" name="mode" value="ranking" onClick="changeMode(false)" checked/> 计分
-      <select id="theme" onChange="changeTheme()" style="display: none"></select>
-      <input class="nice" type="radio" name="boost" id="boostStandard" value="standard" onClick="changeBoost(1)" checked/>
-      <label for="boostStandard">标准</label>
-      <input class="nice" type="radio" name="boost" id="boostExtreme" value="boostExtreme" onClick="changeBoost(2)" />
-      <label for="boostExtreme">极限-顶配</label>
-      <input class="nice" type="radio" name="boost" id="boostExtremeMine" value="boostExtremeMine" onClick="changeBoost(3)" />
-      <label for="boostExtremeMine">极限-我的衣柜</label>
-    </div>
-    <div class='facet'>
-      <div class='control'>
-        <input type="radio" name="simple" value="0" onClick="changeFilter()" /> 皆可
-        <input type="radio" name="simple" value="1" onClick="changeFilter()" /> 简约
-        <input type="radio" name="simple" value="-1" onClick="changeFilter()" /> 华丽
-        <div class='weightContainer' style="display: none" id = "simpleWeightContainer">
-          &nbsp;&nbsp;权重 <input type="text" id="simpleWeight" name="simpleWeight" value="1" onChange="changeFilter()" />
-          <span class="boost" id="simpleBoost"></span>
-        </div>
-      </div>
-      <div class='control'>
-        <input type="radio" name="cute" value="0" onClick="changeFilter()" /> 皆可
-        <input type="radio" name="cute" value="1" onClick="changeFilter()" /> 可爱
-        <input type="radio" name="cute" value="-1" onClick="changeFilter()" /> 成熟
-        <div class='weightContainer' style="display: none" id = "cuteWeightContainer">
-          &nbsp;&nbsp;权重 <input type="text" id="cuteWeight" name="cuteWeight" value="1" onChange="changeFilter()" />
-          <span class="boost" id="cuteBoost"></span>
-        </div>
-      </div>
-      <div class='control'>
-        <input type="radio" name="active" value="0" onClick="changeFilter()" /> 皆可
-        <input type="radio" name="active" value="1" onClick="changeFilter()" /> 活泼
-        <input type="radio" name="active" value="-1" onClick="changeFilter()" /> 优雅
-        <div class='weightContainer' style="display: none" id = "activeWeightContainer">
-          &nbsp;&nbsp;权重 <input type="text" id="activeWeight" name="activeWeight" value="1" onChange="changeFilter()" />
-          <span class="boost" id="activeBoost"></span>
-        </div>
-      </div>
-      <div class='control'>
-        <input type="radio" name="pure" value="0" onClick="changeFilter()" /> 皆可
-        <input type="radio" name="pure" value="1" onClick="changeFilter()" /> 清纯
-        <input type="radio" name="pure" value="-1" onClick="changeFilter()" /> 性感
-        <div class='weightContainer' style="display: none" id = "pureWeightContainer">
-          &nbsp;&nbsp;权重 <input type="text" id="pureWeight" name="pureWeight" value="1" onChange="changeFilter()" />
-          <span class="boost" id="pureBoost"></span>
-        </div>
-      </div>
-      <div class='control'>
-        <input type="radio" name="cool" value="0" onClick="changeFilter()" /> 皆可
-        <input type="radio" name="cool" value="1" onClick="changeFilter()" /> 清凉
-        <input type="radio" name="cool" value="-1" onClick="changeFilter()" /> 保暖
-        <div class='weightContainer' style="display: none" id = "coolWeightContainer">
-          &nbsp;&nbsp;权重 <input type="text" id="coolWeight" name="coolWeight" value="1" onChange="changeFilter()" />
-          <span class="boost" id="coolBoost"></span>
-        </div>
-      </div>
-      <div id='tagFilter'>
-        <div class='control'>
-          Tag1
-          <input type="text" id="tag1" name="tag1" onChange="changeFilter()" />
-          <div class='tagContainer weightContainer' style="display: none" id = "tag1Container">
-            <input type="radio" name="tag1method" value="add" onClick="changeFilter()" checked/> 加分
-            <select id="tag1base" onChange="changeFilter()">
-              <option>SS</option>
-              <option>S</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-            &times;
-            <input type="text" id="tag1weight" name="tag1weight" value="1" onChange="changeFilter()" />
-          </div>
-        </div>
-        <div class='control'>
-          Tag2
-          <input type="text" id="tag2" name="tag2" onChange="changeFilter()" />
-          <div class='tagContainer weightContainer' style="display: none" id = "tag2Container">
-            <input type="radio" name="tag2method" value="add" onClick="changeFilter()" checked/> 加分
-            <select id="tag2base" onChange="changeFilter()">
-              <option>SS</option>
-              <option>S</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-            &times;
-            <input type="text" id="tag2weight" name="tag2weight" value="1" onChange="changeFilter()" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <input type="checkbox" name="inventory" value="own" onClick="onChangeUiFilter()" checked />拥有
-      <span id='inventoryCount'> </span>
-      <input type="checkbox" name="inventory" value="missing" onClick="onChangeUiFilter()" checked /> 没有
-    </div>
-  </form>
-</div>
-<div id="skills">
-</div>
-<hr>
-<div id="summary" class="panel">
-  <h3>for 玉人</h3>
-  <div id="ranking">
+<div class="col-md-6">
+  <h3>关卡</h3>  
+  <div class="input-group">
+    <select ng-model="lvlname" ng-change="onLevelChange(lvlname)" class="form-control">
+      <option value="">-----请选择关卡-----</option>
+      <option ng-repeat="(key,value) in data.availableLevels" value="{{key}}">{{key}}</option>
+    </select>
   </div>
-</div>
-<div id='shoppingCartContainer'>
-  已选择的衣服
-  <span id="accessoriesPanel"><input type="checkbox" id="accessoriesHelper" checked />自动选择饰品</span>
-  <span id="accessoriesWarning" class="red" style="display:none">极限模式下所有衣服均为自动推荐</span>
-  <button onclick="clearShoppingCart()">清空购物车</button>
-  <input type="text" id="searchitem" placeholder="输入衣服名称或编号" class='suggest'/>
-  <div id='shoppingCart'>
+  
+  <h3>属性</h3>  
+  <div>
+    <div class="input-group" ng-repeat="name in data.names">
+      <label class="input-group-addon">
+        <input type="radio" ng-model="data.viewPN[$index]" data-ng-value="1"/>
+        {{name[0]}}
+      </label>
+      <label class="input-group-addon">
+        <input type="radio" ng-model="data.viewPN[$index]" data-ng-value="-1"/>
+        {{name[1]}}
+      </label>
+      <input type="text" class="form-control" ng-model="data.viewValue[$index]" placeholder="权重" />
+    </div>
   </div>
-</div>
 
+  <h3>奖励</h3>
+  <div class="form-group">
+    <div class="form-inline" ng-repeat=" i in [0,1] ">
+      <input type="text" placeholder="标签" class="form-control" ng-model="data.bonus[i].tag" />
+      <select ng-model="data.bonus[i].base" class="form-control">
+        <option value="SS">SS</option>
+        <option value="S">S</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <input type="text" placeholder="权重" class="form-control" ng-model="data.bonus[i].weight"/>
+    </div>
+  </div>
+
+</div>
+<div class="col-md-6">
+  <dressup-result weight="data.availableLevels[lvlname]" bonus="data.bonus"></dressup-result>
+</div>
+<div class="col-md-12">
+  <dressup-all></dressup-all>
+</div>
