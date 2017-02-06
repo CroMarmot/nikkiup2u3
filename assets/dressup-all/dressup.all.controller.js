@@ -9,5 +9,8 @@
     DataService.GetScoring().then(function(data){
       $rootScope.scoring = data;    
     });
+    $scope.$watch("resultall",function(){
+      console.log("Dressup-all",$scope.resultall);
+    });
   }
 })();

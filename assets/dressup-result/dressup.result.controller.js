@@ -14,18 +14,31 @@
     //$scope.bonus
     //$scope.weight 
     
-    $scope.wardrobemine = {};
     $scope.wardrobeall = {};
+    $scope.wardrobemine = {};
     $scope.wardrobeavailable = {};
+
+    //$scope.resultall = {};
+    
+    var onMineWardrobeReady = function(){
+      if(_.isEmpty($rootScope.wardrobe) || _.isEmpty($rootScope.mineWardrobe))
+        return ;
+      if(_.isEmpty($rootScope.mineWardrobe["连衣裙"]) && (_.isEmpty($rootScope.mineWardrobe["上衣"]) || _.isEmpty($rootScope.mineWardrobe["下装"])))
+        return ;
+      $scope.wardrobemine = _.filter($rootScope.wardrobe,function(o){
+        return _.includes($rootScope.mineWardrobe[o[1].split("-")[0]],o[2]);          
+      });
+    }
     
     $rootScope.$watch("wardrobe",function(){
       if(_.isEmpty($rootScope.wardrobe))
         return ;
       //[TODO]three times here means i nead fix this bug
-      //[TODO] wardrobemine
+      onMineWardrobeReady();
       $scope.wardrobeall = $rootScope.wardrobe;
       //[TODO] wardrobeavailable
     });
+
     $rootScope.$watch("categoryDetail",function(){
       if(_.isEmpty($rootScope.categoryDetail))
         return ;
@@ -36,5 +49,12 @@
         return ;
       $scope.scoring = $rootScope.scoring;
     });
+    $rootScope.$watch("mineWardrobe",onMineWardrobeReady);
+   
+    $scope.$watch("resultall",function(){
+      console.log(123);
+      //$scope.$parent.resultall = $scope.resultall;
+    });
+
   }
 })();

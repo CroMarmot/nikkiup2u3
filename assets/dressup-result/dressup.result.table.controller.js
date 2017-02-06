@@ -24,6 +24,9 @@
     //$scope.bonus
     //$scope.weight 
     
+    //selecable
+    //$scope.resultall = 0;
+    
     //$scope.totalscore = 0;
     $scope.AllList = {};
     $scope.contributionScore = {};
@@ -56,6 +59,9 @@
       }else{
         $scope.AllList[$scope.category[1]] = null;//delete $scope.AllList[$scope.category[1]];
       }
+
+      //send to parent only in All tab
+      //$scope.resultAll = $scope.AllList;
 
       $scope.totalscore = 0;
       _.forEach($scope.AllList,function(o){

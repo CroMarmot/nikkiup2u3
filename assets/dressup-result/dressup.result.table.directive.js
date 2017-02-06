@@ -9,6 +9,8 @@
         //two way
         wardrobe:"=wardrobe",
         totalscore:"=totalscore",
+        //selectable
+        resultall:"=resultall",
         //one-way
         scoring:"=",
         category:"=",
