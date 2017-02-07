@@ -112,12 +112,14 @@
  * accessories punishment
  * wardrobe append
  * namefilter
- * newtable
+ * wardrobe add/remove table
  * custom weight
  * gulp
- * newdata(level/wardrobe)]
+ * newdata(level)]
  * phone special css
  * 萤光之灵 特殊能力
+ * 替换 '饰品-手持·双','饰品-手持·左','饰品-手持·右'
+ * 合并 代码内部的bonu+weight,category+wardrobe 减少重复调用
 
 尚未发现作用
  * blacklist/flist

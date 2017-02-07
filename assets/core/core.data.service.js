@@ -31,6 +31,11 @@
         method: 'GET',
         url: 'data/wardrobe.json'
         //[[ name, type, id , hearts, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm，extra, source, suit],]
+        /*
+         wardrobe.sort(function(a,b){return a[1]==b[1]?a[2].localeCompare(b[2]):a[1].localeCompare(b[1]);})
+         for(i in wardrobe){wardrobe[i].pop();if(wardrobe[i][1]=="上装")wardrobe[i][1]="上衣";}
+         $('[name="message"]').val(JSON.stringify(wardrobe));
+        */
       }).then(function successCallback(response) {
         var ret = [];
         _.forEach(response.data,function(o){
