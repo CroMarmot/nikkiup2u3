@@ -1,64 +1,65 @@
 <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped table-hover" >
-	<thead>
-	<tr ng-if="needscorecolumn">
-    <th>名称</th>
-    <th>分数</th>
-    <th>编号</th>
-    <th>心级</th>
-    <th>简约</th>
-    <th>华丽</th>
-    <th>可爱</th>
-    <th>成熟</th>
-    <th>活泼</th>
-    <th>优雅</th>
-    <th>清纯</th>
-    <th>性感</th>
-    <th>清凉</th>
-    <th>保暖</th>
-    <th>特殊属性</th>
-    <th>来源</th>
-	</tr>
+  <thead>
 
-	<tr ng-if="!needscorecolumn">
-    <th>名称</th>
-    <th>类别</th>
-    <th st-sort="2" >编号</th>
-    <th st-sort="3" >心级</th>
-    <th st-sort="sortByRank(4)" >简约</th>
-    <th st-sort="sortByRank(5)" >华丽</th>
-    <th st-sort="sortByRank(6)" >可爱</th>
-    <th st-sort="sortByRank(7)" >成熟</th>
-    <th st-sort="sortByRank(8)" >活泼</th>
-    <th st-sort="sortByRank(9)" >优雅</th>
-    <th st-sort="sortByRank(10)">清纯</th>
-    <th st-sort="sortByRank(11)">性感</th>
-    <th st-sort="sortByRank(12)">清凉</th>
-    <th st-sort="sortByRank(13)">保暖</th>
-    <th>特殊属性</th>
-    <th>来源</th>
-	</tr>
+    <tr ng-if="needscorecolumn">
+      <th>名称</th>
+      <th>分数</th>
+      <th>编号</th>
+      <th>心级</th>
+      <th>简约</th>
+      <th>华丽</th>
+      <th>可爱</th>
+      <th>成熟</th>
+      <th>活泼</th>
+      <th>优雅</th>
+      <th>清纯</th>
+      <th>性感</th>
+      <th>清凉</th>
+      <th>保暖</th>
+      <th>特殊属性</th>
+      <th>来源</th>
+    </tr>
 
-	</thead>
-	<tbody>
-	<tr ng-repeat="row in displayedCollection">
-		<td>{{row[0]}}</td>
-		<td>{{needscorecolumn ? row[17] : row[1]}}</td>
-		<td>{{row[2]}}</td>
-		<td>{{row[3]}}</td>
-		<td>{{row[4]}}</td>
-		<td>{{row[5]}}</td>
-		<td>{{row[6]}}</td>
-		<td>{{row[7]}}</td>
-		<td>{{row[8]}}</td>
-		<td>{{row[9]}}</td>
-		<td>{{row[10]}}</td>
-		<td>{{row[11]}}</td>
-		<td>{{row[12]}}</td>
-		<td>{{row[13]}}</td>
-		<td>{{row[14]}}</td>
-		<td>{{row[15]}}</td>
-	</tr>
-	</tbody>
+    <tr ng-if="!needscorecolumn">
+      <th>名称</th>
+      <th>类别</th>
+      <th st-sort="2" >编号</th>
+      <th st-sort="3" >心级</th>
+      <th st-sort="sortByRank(4)" >简约</th>
+      <th st-sort="sortByRank(5)" >华丽</th>
+      <th st-sort="sortByRank(6)" >可爱</th>
+      <th st-sort="sortByRank(7)" >成熟</th>
+      <th st-sort="sortByRank(8)" >活泼</th>
+      <th st-sort="sortByRank(9)" >优雅</th>
+      <th st-sort="sortByRank(10)">清纯</th>
+      <th st-sort="sortByRank(11)">性感</th>
+      <th st-sort="sortByRank(12)">清凉</th>
+      <th st-sort="sortByRank(13)">保暖</th>
+      <th>特殊属性</th>
+      <th>来源</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in displayedCollection">
+      <td>{{row[0]}}</td>
+      <td>{{needscorecolumn ? row[17] : row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td class="level{{row[4]}}">{{row[4]}}</td>
+      <td class="level{{row[5]}}">{{row[5]}}</td>
+      <td class="level{{row[6]}}">{{row[6]}}</td>
+      <td class="level{{row[7]}}">{{row[7]}}</td>
+      <td class="level{{row[8]}}">{{row[8]}}</td>
+      <td class="level{{row[9]}}">{{row[9]}}</td>
+      <td class="level{{row[10]}}">{{row[10]}}</td>
+      <td class="level{{row[11]}}">{{row[11]}}</td>
+      <td class="level{{row[12]}}">{{row[12]}}</td>
+      <td class="level{{row[13]}}">{{row[13]}}</td>
+      <td>{{row[14]}}</td>
+      <td>{{row[15]}}</td>
+    </tr>
+  </tbody>
   <tfoot>
     <tr>
       <td colspan="16" class="text-center">
