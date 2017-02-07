@@ -1,6 +1,6 @@
 # 这是啥
 
-[奇迹暖暖衣服自动选择搭配器](http://yexiaorain.github.io/nikkiup2u3/)
+[奇迹暖暖衣服自动选择搭配器](http://CroMarmot.github.io/nikkiup2u3/)
 
 # 功能
 
