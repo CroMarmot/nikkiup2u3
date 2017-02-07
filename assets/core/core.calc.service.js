@@ -11,7 +11,7 @@
     var ifBonusScore = function(clothes,bonus,scoring,weight){
       var cnt = 0;
       _.forEach(bonus,function(o){
-        if(_.isEqual(o.tag,clothes[14]) || _.isEqual(o.tag,clothes[0])){
+        if(_.includes(clothes[14],o.tag) || _.includes(clothes[0],o.tag)){
           cnt += o.weight * scoring[clothes[1].split("-")[0]][o.base] * _.sumBy(weight,function(w){return Math.abs(w);});
         }
       });
