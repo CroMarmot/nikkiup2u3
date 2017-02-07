@@ -107,16 +107,17 @@
 
 其它疑问/建议/意见请开`Issues`
 
-# 代码剩余列表 不按先后顺序
- * blacklist
+# 待完成代码列表 不按先后顺序
  * ownView
  * accessories punishment
  * wardrobe append
  * namefilter
  * newtable
  * custom weight
- * colorful
  * gulp
  * newdata(level/wardrobe)]
  * phone special css
  * 萤光之灵 特殊能力
+
+尚未发现作用
+ * blacklist/flist
