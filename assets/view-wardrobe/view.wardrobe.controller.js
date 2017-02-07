@@ -7,6 +7,7 @@
 
   ViewWardrobeController.$inject = ['$scope', '$rootScope']//,'ViewWardrobeService'];
   function ViewWardrobeController($scope, $rootScope){//,ViewWardrobeService) {
+    $scope.needscorecolumn = 0;
     var onDatasReady = function(){
       if(_.isEmpty($scope.wardrobe) || _.isEmpty($scope.category))
         return ;
@@ -19,5 +20,8 @@
 
     $scope.$watch("wardrobe",onDatasReady);
     $scope.$watch("category",onDatasReady);
+    $scope.$watch("sortbyscore",function(){
+      $scope.needscorecolumn = _.isUndefined($scope.sortbyscore) ? 0 : 1;
+    });
   }
 })();

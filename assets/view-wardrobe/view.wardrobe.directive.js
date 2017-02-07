@@ -7,7 +7,8 @@
       restrict: "E",
       scope: {
         wardrobe : "=wardrobe",
-        category : "=category"
+        category : "=category",
+        sortbyscore : "@"
       },
       templateUrl: "assets/view-wardrobe/view.wardrobe.html",
       controller: "ViewWardrobeController"

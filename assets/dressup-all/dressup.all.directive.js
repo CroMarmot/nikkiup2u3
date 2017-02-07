@@ -5,9 +5,7 @@
   function dressupAll() {
     return {
       restrict: "E",
-      scope: {
-        resultall:"=resultall"
-      },
+      scope: {},
       templateUrl: "assets/dressup-all/dressup.all.html",
       controller: "DressupAllController"
     };

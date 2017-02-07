@@ -18,8 +18,6 @@
     $scope.wardrobemine = {};
     $scope.wardrobeavailable = {};
 
-    //$scope.resultall = {};
-    
     var onMineWardrobeReady = function(){
       if(_.isEmpty($rootScope.wardrobe) || _.isEmpty($rootScope.mineWardrobe))
         return ;
@@ -51,10 +49,5 @@
     });
     $rootScope.$watch("mineWardrobe",onMineWardrobeReady);
    
-    $scope.$watch("resultall",function(){
-      console.log(123);
-      //$scope.$parent.resultall = $scope.resultall;
-    });
-
   }
 })();

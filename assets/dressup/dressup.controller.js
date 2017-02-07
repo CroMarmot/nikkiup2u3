@@ -28,6 +28,9 @@
        $scope.data.viewValue[i]=Math.abs($scope.data.availableLevels[lvlname][i]);      
       }
       $scope.data.bonus = _.clone(bonus[lvlname]);
+
+      $rootScope.weight = _.cloneDeep($scope.data.availableLevels[lvlname]);
+      $rootScope.bonus = _.cloneDeep(bonus[lvlname]);
     };
     DressupService.GetBonus().then(function(data){
       bonus = data;

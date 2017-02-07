@@ -6,7 +6,8 @@
     return {
       restrict: "E",
       scope: {
-        rowCollection: '=typedata'
+        rowCollection: '=typedata',
+        needscorecolumn: '=needscorecolumn'
       },
       templateUrl: "assets/view-wardrobe/view.wardrobe.table.html",
       controller: "ViewWardrobeTableController"

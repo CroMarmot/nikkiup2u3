@@ -1,6 +1,25 @@
 <table st-table="rowCollection" class="table table-striped table-hover" >
 	<thead>
-	<tr>
+	<tr ng-if="needscorecolumn">
+    <th>名称</th>
+    <th>分数</th>
+    <th>编号</th>
+    <th>心级</th>
+    <th>简约</th>
+    <th>华丽</th>
+    <th>可爱</th>
+    <th>成熟</th>
+    <th>活泼</th>
+    <th>优雅</th>
+    <th>清纯</th>
+    <th>性感</th>
+    <th>清凉</th>
+    <th>保暖</th>
+    <th>特殊属性</th>
+    <th>来源</th>
+	</tr>
+
+	<tr ng-if="!needscorecolumn">
     <th>名称</th>
     <th>类别</th>
     <th st-sort="2" >编号</th>
@@ -18,11 +37,12 @@
     <th>特殊属性</th>
     <th>来源</th>
 	</tr>
+
 	</thead>
 	<tbody>
 	<tr ng-repeat="row in rowCollection">
 		<td>{{row[0]}}</td>
-		<td>{{row[1]}}</td>
+		<td>{{needscorecolumn ? row[17] : row[1]}}</td>
 		<td>{{row[2]}}</td>
 		<td>{{row[3]}}</td>
 		<td>{{row[4]}}</td>
