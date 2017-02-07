@@ -9,7 +9,7 @@
 
   function DataService($http,localStorageService) {
     this.GetScoring = function(){
-      return $http.get('/data/scoring.json').then(function successCallback(response) {
+      return $http.get('data/scoring.json').then(function successCallback(response) {
         return response.data;
 
       }, function errorCallback(response) {
@@ -29,7 +29,7 @@
     this.GetWardrobe = function(){
       return $http({
         method: 'GET',
-        url: '/data/wardrobe.json'
+        url: 'data/wardrobe.json'
         //[[ name, type, id , hearts, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm，extra, source, suit],]
       }).then(function successCallback(response) {
         var ret = [];
@@ -69,7 +69,7 @@
     this.GetCategory = function(){
       return $http({
         method: 'GET',
-        url: '/data/category.json'
+        url: 'data/category.json'
         //[name,]
       }).then(function successCallback(response) {
         return response.data;

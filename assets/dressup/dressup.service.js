@@ -8,7 +8,7 @@
   function DressupService($http) {
     this.GetLevels = function(){
       //simple,cute,active,pure,cool
-      return $http.get('/data/levels.json').then(function successCallback(response) {
+      return $http.get('data/levels.json').then(function successCallback(response) {
         return response.data;
 
       }, function errorCallback(response) {
@@ -17,7 +17,7 @@
       }); 
     }
     this.GetBonus = function(){
-      return $http.get('/data/bonus.json').then(function successCallback(response) {
+      return $http.get('data/bonus.json').then(function successCallback(response) {
         return response.data;
 
       }, function errorCallback(response) {
@@ -26,7 +26,7 @@
       }); 
     }
     this.GetBlacklists = function(){
-      return $http.get('/data/blacklists.json').then(function successCallback(response) {
+      return $http.get('data/blacklists.json').then(function successCallback(response) {
         return response.data;
 
       }, function errorCallback(response) {
