@@ -1,4 +1,4 @@
-<table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped table-hover" >
+<table st-table="displayedCollection" st-safe-src="rowCollection" st-set-filter="ViewWardrobeTableCustomFilter" class="table table-striped table-hover" >
   <thead>
 
     <tr ng-if="needscorecolumn">
@@ -38,7 +38,24 @@
       <th>特殊属性</th>
       <th>来源</th>
     </tr>
-
+    <tr>
+      <th><input st-search="i0" class="input-sm form-control" type="search"/></th>
+      <th></th>
+      <th><input st-search="i2" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i3" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i4" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i5" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i6" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i7" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i8" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i9" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i10" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i11" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i12" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i13" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i14" class="input-sm form-control" type="search"/></th>
+      <th><input st-search="i15" class="input-sm form-control" type="search"/></th>
+    </tr>
   </thead>
   <tbody>
     <tr ng-repeat="row in displayedCollection">
