@@ -2,7 +2,7 @@
 </view-wardrobe>
 <div class="col-md-6">
   <select name="levelSelect" id="levelSelect" ng-model="data.category" class="form-control">
-    <option ng-repeat="(k,v) in view.category" value="{{k}}">{{v}}</option>
+    <option ng-repeat="(k,v) in view.category" value="{{v}}">{{v}}</option>
   </select>
   <textarea ng-model="view.append" class="form-control" style="min-height:500px" placeholder='使用以下格式:001,4,07,1023'></textarea>
   <button ng-click="appendClick()" class="form-control">新增</button>

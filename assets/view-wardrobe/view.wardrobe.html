@@ -1,5 +1,8 @@
 <uib-tabset active="active" type="pills">
-  <uib-tab ng-repeat="(key,value) in viewdata" heading="{{key}}" style="width: 127px;text-align: center;">
+  <uib-tab ng-repeat="(key,value) in viewdata" style="width: 127px;text-align: center;">
+    <uib-tab-heading>
+      {{key}} <small style="display:block;">{{viewdata[key].length}}</small>
+    </uib-tab-heading>
     <view-wardrobe-table needscorecolumn="needscorecolumn" typedata="viewdata[key]"></view-wardrobe-table>  
   </uib-tab>
 </uib-tabset>
